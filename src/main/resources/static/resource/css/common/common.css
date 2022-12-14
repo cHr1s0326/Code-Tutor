@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/* 기본 설정 */
+@import url("/resource/css/common/default.css");
+/* 폰트 */
+@import url("/resource/css/common/font.css");
+/* 헤더 */
+@import url("/resource/css/common/header.css");
+/* 배너 */
+@import url("/resource/css/common/banner.css");

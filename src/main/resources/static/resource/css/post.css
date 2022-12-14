@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+@import url("/resource/css/common/common.css");
+@import url("/resource/css/common/codeMirrorInit.css");
+
+.body-wrap {
+	background-image: linear-gradient(-180deg, #222222 30%,#222222 90%);
+}
+
+.body-container {
+	width: 65%;
+	margin: 0 auto;
+	font-size: 16px;
+}
+
+.body-container form {
+	border: 1px solid white;
+	padding: 15px;
+	border-radius: 10px;
+}
+
+.body-container input {
+	background: #fff;
+	color: #a3a3a3;
+	font: inherit;
+	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+	border: 0;
+	outline: 0;
+	padding: 10px 10px;
+	border-radius: 10px;
+	margin: 5px;
+}
+
+.desc-container {
+	width: 100%;
+	height: 200px;
+}
+
+.desc-container .description-textarea{
+	width: 95%;
+	height: 80%;
+	resize: none;
+	border-radius: 10px;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.option-wrap {
+	height: 50px;
+	display: flex;
+	align-items: center;
+}
+
+.option-wrap div{
+	width: 50%;
+}
+
+.option-container select, option {
+	width: 30%;
+	height: 40px;
+	border-radius: 10px;
+}
+
+.submit-container {
+	height: 50px;
+	margin-top: 10px;
+}
+
+.submit-container .submit-btn {
+	float: right;
+}
+
+.CodeMirror {
+	width: 100%;
+	border-radius: 10px;
+	margin-top: 10px;
+}

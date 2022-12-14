@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/* 기본 설정 css */
+@import url("/resource/css/common/common.css");
+/* 컨텐츠 css */
+@import url("/resource/css/common/content.css");
+
+
+
+.content-header div{
+	margin: 5px;
+}
+
+.date-container {
+	text-align: right;
+}
+
+/* body */
+.CodeMirror {
+	width: 90%;
+	height: 100px;
+	margin: auto;
+	overflow: auto;
+	font-size: 16px;
+	border-radius: 10px;
+}
+
+.CodeMirror-scroll {
+	height: 100px;
+}
+
+.CodeMirror-linenumbers {
+	height: auto;
+}

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Space%20Mono");
+
+/* 도스 고딕 */
+@font-face {
+    font-family: 'DOSGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/DOSGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Y컴퓨터 */
+@font-face {
+    font-family: 'Ycomputer-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/Ycomputer-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.body-container {
+	font-size: 20px;
+}

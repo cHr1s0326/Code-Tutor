@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+@import url("/resource/css/contentView.css");
+
+input {
+	background: #fff;
+	color: #a3a3a3;
+	font: inherit;
+	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+	border: 0;
+	outline: 0;
+	padding: 10px 10px;
+	border-radius: 10px;
+	margin: 5px;
+}
+
+.content-language {
+	display: none;
+}
+
+.description-textarea {
+	width: 95%;
+	height: 100px;
+	resize: none;
+	border-radius: 10px;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	text-align: left;
+}
+
+.info-container {
+	display: flex;
+	align-items: center;
+}
+
+.info-container {
+	width: 100%;
+}
+
+.info-container div {
+	width: 50%;
+}
+
+.info-container select, option {
+	width: 30%;
+	height: 40px;
+	border-radius: 10px;
+}
+
+.option-container {
+	display: flex;
+	align-items: center;
+}
+
+.option-container div {
+	width: 50%;
+	margin: 10px;
+}

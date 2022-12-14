@@ -1,0 +1,4 @@
+@charset "UTF-8";
+
+@import url("/resource/plugin/codemirror5/theme/ambiance.css");
+@import url("/resource/plugin/codemirror5/lib/codemirror.css");
