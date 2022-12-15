@@ -11,6 +11,8 @@
 	href="/resource/plugin/codemirror5/lib/codemirror.css">
 <link type="text/css" rel="stylesheet"
 	href="/resource/plugin/codemirror5/theme/ambiance.css">
+<link rel="shortcut icon" href="/resource/img/icon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/resource/img/icon//favicon.ico" type="image/x-icon">
 </head>
 <body>
 	<div class="body-wrap">
@@ -25,12 +27,12 @@
 				<div class="content-container">
 					<div class="content-header">
 						<div class="author-container">
-							<span class="author">${ Content.author }</span>
+							<span class="author"><a href="searchByAuthor?author=${ Content.author}">${ Content.author }</a></span>
 						</div>
 						<div class="info-container">
 							<span class="content-name"><a
 								href="/contentView?fid=${ Content.fid }">${ Content.name }</a></span> <span
-								class="content-language"><a href="#">${ Content.language }</a></span>
+								class="content-language"><a href="/searchByLanguage?language=${ Content.language }">${ Content.language }</a></span>
 						</div>
 						<div class="detail-container">
 							<div class="description-container">

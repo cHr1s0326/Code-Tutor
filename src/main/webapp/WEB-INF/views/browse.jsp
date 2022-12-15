@@ -12,6 +12,10 @@
 	href="/resource/plugin/codemirror5/lib/codemirror.css">
 <link type="text/css" rel="stylesheet"
 	href="/resource/plugin/codemirror5/theme/ambiance.css">
+<link rel="shortcut icon" href="/resource/img/icon/favicon.ico"
+	type="image/x-icon">
+<link rel="icon" href="/resource/img/icon//favicon.ico"
+	type="image/x-icon">
 <body>
 	<div class="body-wrap">
 		<div class="header-wrap">
@@ -41,17 +45,82 @@
 				</form>
 			</div>
 		</div>
+		<div class="sidemenu-container">
+			<ul class="sidemenu">
+				<li>
+					<div class="language-container">
+						<a href="searchByLanguage?language=Java"> <span
+							class="language">Java</span>
+						</a>
+					</div>
+					<div class="count-container">
+						<span class="count">1</span>
+					</div>
+				</li>
+				<li>
+					<div class="language-container">
+						<a href="searchByLanguage?language=C"> <span class="language">C</span>
+						</a>
+					</div>
+					<div class="count-container">
+						<span class="count">2</span>
+					</div>
+				</li>
+				<li>
+					<div class="language-container">
+						<a href="searchByLanguage?language=C++"> <span
+							class="language">C++</span>
+						</a>
+					</div>
+					<div class="count-container">
+						<span class="count">3</span>
+					</div>
+				</li>
+				<li>
+					<div class="language-container">
+						<a href="searchByLanguage?language=Python"> <span
+							class="language">Python</span>
+						</a>
+					</div>
+					<div class="count-container">
+						<span class="count">4</span>
+					</div>
+				</li>
+				<li>
+					<div class="language-container">
+						<a href="searchByLanguage?language=JavaScript"> <span
+							class="language">JavaScript</span>
+						</a>
+					</div>
+					<div class="count-container">
+						<span class="count">5</span>
+					</div>
+				</li>
+				<li>
+					<div class="language-container">
+						<a href="searchByLanguage?language=CSS"> <span
+							class="language">CSS</span>
+						</a>
+					</div>
+					<div class="count-container">
+						<span class="count">6</span>
+					</div>
+				</li>
+			</ul>
+		</div>
 		<div class="body-container">
 			<c:forEach var="Content" items="${ Contents }">
 				<div class="content-container">
 					<div class="content-header">
 						<div class="author-container">
-							<span class="author">${ Content.author }</span>
+							<span class="author"><a
+								href="/searchByAuthor?author=${ Content.author }">${ Content.author }</a></span>
 						</div>
 						<div class="info-container">
 							<span class="content-name"><a
-								href="/contentView?fid=${ Content.fid }">${ Content.name }</a></span> <span
-								class="content-language"><a href="#">${ Content.language }</a></span>
+								href="/contentView?fid=${ Content.fid }">${ Content.name }</a> / </span> <span
+								class="content-language"><a
+								href="searchByLanguage?language=${ Content.language }">${ Content.language }</a></span>
 						</div>
 						<div class="detail-container">
 							<div class="description-container">

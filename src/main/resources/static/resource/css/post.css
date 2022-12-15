@@ -19,9 +19,8 @@
 	border-radius: 10px;
 }
 
-.body-container input {
-	background: #fff;
-	color: #a3a3a3;
+.body-container input{
+	color: black;
 	font: inherit;
 	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 	border: 0;
@@ -44,6 +43,7 @@
 	display: block;
 	margin: auto;
 	margin-top: 10px;
+	font-size: 16px;
 }
 
 .option-wrap {
@@ -67,8 +67,14 @@
 	margin-top: 10px;
 }
 
-.submit-container .submit-btn {
+input[type="submit"] {
+	width: 15%;
+	height: 100%;
 	float: right;
+	background-color: #3fb950;
+	cursor: pointer;
+	color: white;
+	padding: 5px;
 }
 
 .CodeMirror {

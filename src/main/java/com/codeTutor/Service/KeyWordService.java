@@ -1,4 +1,4 @@
-package com.codeTutor.db;
+package com.codeTutor.Service;
 
 import javax.sql.DataSource;
 
@@ -10,7 +10,7 @@ import com.codeTutor.mapper.KeyWordMapper;
 import com.codeTutor.model.KeyWord;
 
 @Component
-public class KeyWordDB {
+public class KeyWordService {
 	private JdbcTemplate jdbcTemplate;
 
 	@Autowired

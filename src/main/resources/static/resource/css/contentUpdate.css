@@ -4,7 +4,7 @@
 
 input {
 	background: #fff;
-	color: #a3a3a3;
+	color: black;
 	font: inherit;
 	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 	border: 0;
@@ -27,6 +27,7 @@ input {
 	margin: auto;
 	margin-top: 10px;
 	text-align: left;
+	font-size: 16px;
 }
 
 .info-container {
@@ -56,4 +57,8 @@ input {
 .option-container div {
 	width: 50%;
 	margin: 10px;
+}
+
+input[type="submit"] {
+	background-color: #3fb950;
 }

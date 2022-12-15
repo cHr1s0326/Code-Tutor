@@ -1,4 +1,4 @@
-package com.codeTutor.db;
+package com.codeTutor.Service;
 
 import org.springframework.stereotype.Component;
 
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @Component
-public class ContentDB {
+public class ContentService {
 	private JdbcTemplate jdbcTemplate;
 
 	@Autowired
@@ -107,8 +107,31 @@ public class ContentDB {
 			return c;
 		} catch (Exception e) {
 			System.out.println(e);
-			c = null;
-			return c;
+			return null;
+		}
+	}
+	
+	public List<Content> selectContentByLanguage(String language) {
+		try {
+			String sql = "SELECT * FROM content WHERE language = ? order by date desc";
+			List<Content> result = jdbcTemplate.query(sql, new ContentMapper(), language);
+			
+			return result;
+		} catch(Exception e) {
+			System.out.println(e);
+			return null;
+		}
+	}
+	
+	public List<Content> selectContentByAuthor(String author) {
+		try {
+			String sql = "SELECT * FROM content WHERE author = ? order by date desc";
+			List<Content> result = jdbcTemplate.query(sql, new ContentMapper(), author);
+			
+			return result;
+		} catch(Exception e) {
+			System.out.println(e);
+			return null;
 		}
 	}
 }

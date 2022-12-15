@@ -12,6 +12,8 @@
 	href="/resource/plugin/codemirror5/lib/codemirror.css">
 <link type="text/css" rel="stylesheet"
 	href="/resource/plugin/codemirror5/theme/ambiance.css">
+<link rel="shortcut icon" href="/resource/img/icon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/resource/img/icon//favicon.ico" type="image/x-icon">
 <body>
 	<div class="body-wrap">
 		<div class="header-wrap">
@@ -27,7 +29,7 @@
 					</div>
 					<div class="info-container">
 						<span class="content-name">${ content.name } / </span> <span
-							class="content-language"><a href="#">${ content.language }</a></span>
+							class="content-language"><a href="/searchByLanguage?language=${ Content.language }">${ content.language }</a></span>
 					</div>
 					<div class="date-container">
 						<span class="date">${ content.date }</span>
@@ -37,10 +39,10 @@
 					<textarea class="content-textarea">${ content.content }</textarea>
 				</div>
 				<div class="btn-container">
-				<form class="delete-form" action="/content/deleteContent.do?fid=${ content.fid }" method="post">
-					<input type="button" class="update-btn" value="수정" onClick="location.href='/contentUpdate?fid=${ content.fid }'">
-					<input type="submit" class="delete-btn" value="삭제">
-				</form>
+					<form class="update-form" action="/content/deleteContent.do?fid=${ content.fid }" method="post">
+						<input type="button" class="update-btn" value="수정" onClick="location.href='/contentUpdate?fid=${ content.fid }'">
+						<input type="submit" class="delete-btn" value="삭제">
+					</form>
 				</div>
 			</div>
 		</div>

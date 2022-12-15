@@ -32,6 +32,29 @@ a {
 	height: 100%;
 }
 
+input[type="button"] {
+	background-color: #3fb950;
+}
+
+input[type="submit"] {
+	background-color: #FF3333;
+}
+
+input[type="button"], input[type="submit"] {
+	width: 10%;
+	color: black;
+	font: inherit;
+	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+	border: 0;
+	outline: 0;
+	padding: 10px 10px;
+	border-radius: 10px;
+	float: right;
+	margin: 20px;
+	cursor: pointer;
+	color: white;
+}
+
 .CodeMirror {
 	border: 1px solid #eee;
 	height: 100%;

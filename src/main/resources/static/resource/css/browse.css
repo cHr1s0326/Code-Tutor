@@ -59,3 +59,51 @@ select {
 	padding: 5px 10px;
 	border-radius: 15px;
 }
+
+.sidemenu-container {
+	width: 15%;
+	background-color: inherit;
+	margin: 100px;
+	border: 1px solid white;
+	border-radius: 15px;
+}
+
+.sidemenu-container, .body-container {
+	float: left;
+}
+
+.sidemenu {
+	width: 100%;
+	list-style: none;
+	padding-left: 0px;
+	color: #cccccc;
+}
+
+.sidemenu li{
+	width: 100%;
+	border-radius: 15px;
+	padding: 10px 0px;
+	display: flex;
+	align-items: center;
+}
+
+.sidemenu li:hover {
+	background-color: white;
+	color: black;
+}
+
+.sidemenu li .language-container{
+	width: 80%;
+	text-align: center;
+}
+
+.sidemenu li a {
+	display: block;
+	width: 100%;
+}
+
+.sidemenu li .count-container {
+	width: 20%;
+	text-align: center;
+	margin-right: 5px;
+}

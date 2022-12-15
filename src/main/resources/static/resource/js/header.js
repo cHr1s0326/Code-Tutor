@@ -43,6 +43,7 @@ headerTemplate.innerHTML = `
 	height: 100%;
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 }
 
 .menu {
@@ -62,6 +63,16 @@ headerTemplate.innerHTML = `
 .logo-img {
 	width: 15%;
 }
+
+.login-menu {
+	width: 54%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	justify-content: flex-end;
+}
+
 </style>
 
 			<div class="header-container">
@@ -74,6 +85,11 @@ headerTemplate.innerHTML = `
 						<li><a href="/browse">둘러보기</a></li>
 						<li><a href="/post">추가하기</a></li>
 					</ul>
+				</div>
+				<div class="login-menu">
+					<div class="login-btn" style="">
+						<a href="/login"><span>로그인</span></a>
+					</div>
 				</div>
 			</div>
 `;

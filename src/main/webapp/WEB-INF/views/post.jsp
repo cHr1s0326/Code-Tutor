@@ -7,7 +7,8 @@
 <title>Add Content</title>
 </head>
 <link type="text/css" rel="stylesheet" href="/resource/css/post.css">
-
+<link rel="shortcut icon" href="/resource/img/icon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/resource/img/icon//favicon.ico" type="image/x-icon">
 <body>
 	<div class="body-wrap">
 		<div class="header-wrap">

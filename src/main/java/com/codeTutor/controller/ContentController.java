@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.codeTutor.db.ContentDB;
-import com.codeTutor.db.KeyWordDB;
+import com.codeTutor.Service.ContentService;
+import com.codeTutor.Service.KeyWordService;
 import com.codeTutor.model.Content;
 import com.codeTutor.model.KeyWord;
 
 @Controller
 public class ContentController {
 	@Autowired
-	private ContentDB contentdb;
+	private ContentService contentdb;
 	@Autowired
-	private KeyWordDB keyworddb;
+	private KeyWordService keyworddb;
 	
 	@GetMapping("/content/getAllContent.do")
 	public String getAllContents(Model model) {

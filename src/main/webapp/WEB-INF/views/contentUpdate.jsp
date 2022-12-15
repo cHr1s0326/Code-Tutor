@@ -12,6 +12,10 @@
 	href="/resource/plugin/codemirror5/lib/codemirror.css">
 <link type="text/css" rel="stylesheet"
 	href="/resource/plugin/codemirror5/theme/ambiance.css">
+<link rel="shortcut icon" href="/resource/img/icon/favicon.ico"
+	type="image/x-icon">
+<link rel="icon" href="/resource/img/icon//favicon.ico"
+	type="image/x-icon">
 </head>
 <body>
 	<div class="body-wrap">
@@ -26,13 +30,15 @@
 						<div class="detail-container">
 							<div class="description-container">
 								<label for="description">코드 설명: </label>
-								<textarea class="description-textarea" name="description" required>${ content.description }</textarea>
+								<textarea class="description-textarea" name="description"
+									required>${ content.description }</textarea>
 							</div>
 						</div>
 						<div class="info-container">
 							<div class="name-container">
 								<label for="name">파일명: </label><input type="text"
-									class="content-name" name="name" value="${ content.name }" required>
+									class="content-name" name="name" value="${ content.name }"
+									required>
 							</div>
 							<div class="language-container">
 								<span class="content-language" style="display: none">${ content.language }</span>
@@ -51,7 +57,8 @@
 						<div class="option-container">
 							<div class="keyword-container">
 								<label for="keyword1">키워드: </label> <input type="text"
-									class="keyword" name="keyword1" value="${ keyword.keyword1 }" required>
+									class="keyword" name="keyword1" value="${ keyword.keyword1 }"
+									required>
 							</div>
 							<div class="date-container">
 								<span class="date">${ content.date }</span>

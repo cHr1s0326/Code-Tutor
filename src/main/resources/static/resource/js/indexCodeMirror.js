@@ -23,7 +23,7 @@ const setEditor = () => {
 			lineNumbers: true,
 			theme: "ambiance",
 			mode: mode
-		})
+		});
 	});
 }
 

@@ -29,6 +29,10 @@
 	font-size: 20px;
 }
 
+.logo-img {
+	width: 15%;
+}
+
 .header-container a {
 	text-decoration: none;
 	color: white;
@@ -54,8 +58,4 @@
 .menu li {
 	display: inline-block;
 	margin: 0 auto;
-}
-
-.logo-img {
-	width: 15%;
 }
