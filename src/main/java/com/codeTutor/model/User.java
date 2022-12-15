@@ -4,7 +4,6 @@ public class User {
 	private int uid;
 	private String nickname;
 	private String password;
-	private String passwordRepeat;
 
 	public int getUid() {
 		return uid;
@@ -30,17 +29,10 @@ public class User {
 		this.password = password;
 	}
 
-	public String getPasswordRepeat() {
-		return passwordRepeat;
-	}
-
-	public void setPasswordRepeat(String passwordRepeat) {
-		this.passwordRepeat = passwordRepeat;
-	}
-
 	@Override
 	public String toString() {
-		return "User [uid=" + uid + ", nickname=" + nickname + ", password=" + password + ", passwordRepeat="
-				+ passwordRepeat + "]";
+		return "User [uid=" + uid + ", nickname=" + nickname + ", password=" + password + "]";
 	}
+	
+	
 }

@@ -1,14 +1,19 @@
 package com.codeTutor.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.codeTutor.Service.UserService;
 import com.codeTutor.model.User;
+import com.codeTutor.model.UserLogin;
 
 @Controller
 public class UserController {
@@ -17,8 +22,8 @@ public class UserController {
 	private UserService userdb;
 	
 	@PostMapping("/user/signup.do")
-	public String doSignup(Model model, @ModelAttribute User u) {
-		if(!u.getPassword().equals(u.getPasswordRepeat())) {
+	public String doSignup(Model model, @ModelAttribute User u, @ModelAttribute UserLogin ul) {
+		if(!u.getPassword().equals(ul.getPasswordRepeat())) {
 			model.addAttribute("msg", "두 비밀번호가 일치하지 않습니다.");
 			model.addAttribute("url", "/signup");
 			
@@ -42,7 +47,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/user/login.do")
-	public String doLogin(Model model, @ModelAttribute User u) {
+	public String doLogin(Model model, HttpServletRequest request, @ModelAttribute User u) {
 		String encryptPassword = userdb.getPassword(u.getNickname());
 		boolean loginResult = encoder.matches(u.getPassword(), encryptPassword);
 		
@@ -52,6 +57,18 @@ public class UserController {
 			
 			return "alert";
 		}
+		
+		User loginUser = userdb.getUserByNickname(u.getNickname());
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("loginUser", loginUser);
+		
+		return "redirect:/";
+	}
+	
+	@GetMapping("/logout.do")
+	public String doLogout(HttpSession session) {
+		session.invalidate();
 		
 		return "redirect:/";
 	}

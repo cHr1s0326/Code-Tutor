@@ -7,11 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.codeTutor.Service.ContentService;
 import com.codeTutor.Service.KeyWordService;
 import com.codeTutor.model.Content;
 import com.codeTutor.model.KeyWord;
+import com.codeTutor.model.User;
 
 @Controller
 public class ViewController {
@@ -44,7 +46,10 @@ public class ViewController {
 	}
 
 	@GetMapping("/login")
-	public String showLoginView(Model model) {
+	public String showLoginView(Model model, @SessionAttribute(name = "loginUser", required = false)User user) {
+		if(user != null) {
+			return "redirect:/";
+		} 
 		model.addAttribute("method", "로그인");
 		model.addAttribute("action", "/user/login.do");
 		model.addAttribute("resetPassword",
@@ -57,7 +62,10 @@ public class ViewController {
 	}
 
 	@GetMapping("/post")
-	public String showPostFuncView() {
+	public String showPostFuncView(@SessionAttribute(name = "loginUser", required = false)User user) {
+		if(user == null) {
+			return "redirect:/login";
+		}
 		return "/post";
 	}
 

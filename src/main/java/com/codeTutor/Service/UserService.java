@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import com.codeTutor.mapper.UserMapper;
 import com.codeTutor.model.User;
 
 @Component
@@ -28,6 +29,19 @@ public class UserService {
 			System.out.println(e);
 			
 			return false;
+		}
+	}
+	
+	public User getUserByNickname(String userName) {
+		try {
+			String sql = "SELECT * FROM user WHERE nickname = ?";
+			User result = jdbcTemplate.queryForObject(sql, new UserMapper(), userName);
+			
+			return result;
+		} catch(Exception e) {
+			System.out.println(e);
+			
+			return null;
 		}
 	}
 	
