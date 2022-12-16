@@ -134,4 +134,16 @@ public class ContentService {
 			return null;
 		}
 	}
+	
+	public int getCountByLanguage(String language) {
+		try {
+			String sql = "SELECT COUNT(*) FROM content WHERE language=?";
+			int result = Integer.parseInt(jdbcTemplate.queryForObject(sql, String.class, language));
+			
+			return result;
+		} catch(Exception e) {
+			System.out.println(e);
+			return -1;
+		}
+	}
 }

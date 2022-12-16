@@ -107,3 +107,7 @@ select {
 	text-align: center;
 	margin-right: 5px;
 }
+
+.sidemenu .count {
+	font-size: 12px;
+}

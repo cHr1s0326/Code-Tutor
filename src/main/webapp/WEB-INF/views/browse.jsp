@@ -79,7 +79,7 @@
 						</a>
 					</div>
 					<div class="count-container">
-						<span class="count">1</span>
+						<span class="count">${ Counts[0] }</span>
 					</div>
 				</li>
 				<li>
@@ -88,7 +88,7 @@
 						</a>
 					</div>
 					<div class="count-container">
-						<span class="count">2</span>
+						<span class="count">${ Counts[1] }</span>
 					</div>
 				</li>
 				<li>
@@ -98,7 +98,7 @@
 						</a>
 					</div>
 					<div class="count-container">
-						<span class="count">3</span>
+						<span class="count">${ Counts[2] }</span>
 					</div>
 				</li>
 				<li>
@@ -108,7 +108,7 @@
 						</a>
 					</div>
 					<div class="count-container">
-						<span class="count">4</span>
+						<span class="count">${ Counts[3] }</span>
 					</div>
 				</li>
 				<li>
@@ -118,7 +118,7 @@
 						</a>
 					</div>
 					<div class="count-container">
-						<span class="count">5</span>
+						<span class="count">${ Counts[4] }</span>
 					</div>
 				</li>
 				<li>
@@ -128,7 +128,7 @@
 						</a>
 					</div>
 					<div class="count-container">
-						<span class="count">6</span>
+						<span class="count">${ Counts[5] }</span>
 					</div>
 				</li>
 			</ul>

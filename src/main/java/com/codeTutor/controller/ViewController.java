@@ -1,5 +1,6 @@
 package com.codeTutor.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import com.codeTutor.Service.KeyWordService;
 import com.codeTutor.model.Content;
 import com.codeTutor.model.KeyWord;
 import com.codeTutor.model.User;
+import com.codeTutor.Config.LanguageConstants;
 
 @Controller
 public class ViewController {
@@ -28,6 +30,22 @@ public class ViewController {
 		model.addAttribute("allContent", content);
 
 		return "/index";
+	}
+
+	@GetMapping("/browse")
+	public String showBrowse(Model model) {
+		String[] language = { LanguageConstants.JAVA, LanguageConstants.C, LanguageConstants.CPP,
+				LanguageConstants.PYTHON, LanguageConstants.JAVA_SCRIPT, LanguageConstants.CSS };
+		int[] counts = new int[language.length];
+		
+		for(int i = 0; i < counts.length; i++)
+			counts[i] = contentdb.getCountByLanguage(language[i]);
+		
+		List<Content> content = contentdb.selectAll();
+		model.addAttribute("Contents", content);
+		model.addAttribute("Counts", counts);
+
+		return "/browse";
 	}
 
 	@GetMapping("/signup")
@@ -46,10 +64,10 @@ public class ViewController {
 	}
 
 	@GetMapping("/login")
-	public String showLoginView(Model model, @SessionAttribute(name = "loginUser", required = false)User user) {
-		if(user != null) {
+	public String showLoginView(Model model, @SessionAttribute(name = "loginUser", required = false) User user) {
+		if (user != null) {
 			return "redirect:/";
-		} 
+		}
 		model.addAttribute("method", "로그인");
 		model.addAttribute("action", "/user/login.do");
 		model.addAttribute("resetPassword",
@@ -62,8 +80,8 @@ public class ViewController {
 	}
 
 	@GetMapping("/post")
-	public String showPostFuncView(@SessionAttribute(name = "loginUser", required = false)User user) {
-		if(user == null) {
+	public String showPostFuncView(@SessionAttribute(name = "loginUser", required = false) User user) {
+		if (user == null) {
 			return "redirect:/login";
 		}
 		return "/post";

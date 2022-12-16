@@ -59,6 +59,7 @@ public class UserController {
 		}
 		
 		User loginUser = userdb.getUserByNickname(u.getNickname());
+		loginUser.setPassword(null);
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("loginUser", loginUser);
