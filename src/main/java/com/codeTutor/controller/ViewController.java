@@ -101,7 +101,7 @@ public class ViewController {
 	@GetMapping("/contentUpdate")
 	public String showUpdate(Model model, @RequestParam(value = "fid", required = true) int fid, @SessionAttribute(name = "loginUser", required = false) User user) {
 		Content content = contentdb.selectByFid(fid);
-		if(user == null || userValidate(fid, user.getNickname())) {
+		if(user == null || !userValidate(fid, user.getNickname())) {
 			model.addAttribute("msg", "잘못된 접근입니다.");
 			model.addAttribute("url", "/");
 			

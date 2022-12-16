@@ -55,7 +55,7 @@
 					</div>
 					<div class="info-container">
 						<span class="content-name">${ content.name } / </span> <span
-							class="content-language"><a href="/searchByLanguage?language=${ Content.language }">${ content.language }</a></span>
+							class="content-language"><a href="/searchByLanguage?language=${ content.language }">${ content.language }</a></span>
 					</div>
 					
 					<div class="keyword-container">
