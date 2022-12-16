@@ -20,7 +20,7 @@ a {
 	color: white;
 }
 
-.content-container .detail-container, .info-container, .date-container {
+.content-container .detail-container, .info-container, .date-container, .keyword-container {
 	margin: 10px;
 }
 

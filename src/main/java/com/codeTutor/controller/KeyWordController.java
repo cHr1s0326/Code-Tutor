@@ -41,4 +41,12 @@ public class KeyWordController {
 		
 		return "/browse";
 	}
+	
+	@GetMapping("/searchByKeyWord")
+	public String searchByKeyWord(Model model, @RequestParam(value = "keyword", required = true) String keyword) {
+		List<Content> content = contentdb.selectContentBykeyWord(keyword);
+		model.addAttribute("Contents", content);
+		
+		return "/browse";
+	}
 }

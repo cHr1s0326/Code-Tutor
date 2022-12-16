@@ -90,7 +90,11 @@ public class ViewController {
 	@GetMapping("/contentView")
 	public String showContent(Model model, @RequestParam(value = "fid", required = true) int fid, @SessionAttribute(name = "loginUser", required = false) User user) {
 		Content content = contentdb.selectByFid(fid);
+		KeyWord keyword = keyworddb.getKeyWord(fid);
+		
 		model.addAttribute("content", content);
+		model.addAttribute("keyword", keyword);
+		
 		return "/contentView";
 	}
 

@@ -57,6 +57,10 @@
 						<span class="content-name">${ content.name } / </span> <span
 							class="content-language"><a href="/searchByLanguage?language=${ Content.language }">${ content.language }</a></span>
 					</div>
+					
+					<div class="keyword-container">
+						<span class="keyword"><a href="/searchByKeyWord?keyword=${ keyword.keyword1 }">#${ keyword.keyword1 }</a></span>
+					</div>
 					<div class="date-container">
 						<span class="date">${ content.date }</span>
 					</div>

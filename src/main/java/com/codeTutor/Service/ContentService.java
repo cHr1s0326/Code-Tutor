@@ -111,6 +111,18 @@ public class ContentService {
 		}
 	}
 	
+	public List<Content> selectContentBykeyWord(String keyWord) {
+		try {
+			String sql = "SELECT * FROM content WHERE fid IN (SELECT fid FROM keyword WHERE keyword1 = ?) order by date desc";
+			List<Content> result = jdbcTemplate.query(sql, new ContentMapper(), keyWord);
+			
+			return result;
+		} catch(Exception e) {
+			System.out.println(e);
+			return null;
+		}
+	}
+	
 	public List<Content> selectContentByLanguage(String language) {
 		try {
 			String sql = "SELECT * FROM content WHERE language = ? order by date desc";
