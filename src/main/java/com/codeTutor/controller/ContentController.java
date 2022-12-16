@@ -44,6 +44,14 @@ public class ContentController {
 	@PostMapping("/content/postContent.do")
 	public String postContent(Model model, @ModelAttribute Content c, @ModelAttribute KeyWord k,
 			@SessionAttribute(name = "loginUser", required = false) User user) {
+		
+		if(user == null) {
+			model.addAttribute("msg", "잘못된 접근입니다.");
+			model.addAttribute("url", "/");
+			
+			return "alert";
+		}
+		
 		c.setDate();
 		c.setAuthor(user.getNickname());
 
@@ -55,7 +63,7 @@ public class ContentController {
 
 			if (keywordResponse) {
 				model.addAttribute("msg", "성공적으로 추가되었습니다.");
-				model.addAttribute("url", "/post");
+				model.addAttribute("url", "/");
 				return "alert";
 			}
 		}
@@ -67,9 +75,17 @@ public class ContentController {
 	}
 
 	@PostMapping("/content/updateContent.do")
-	public String updateContent(Model model, @ModelAttribute Content c, @ModelAttribute KeyWord k) {
+	public String updateContent(Model model, @ModelAttribute Content c, @ModelAttribute KeyWord k,
+			@SessionAttribute(name = "loginUser", required = false) User user) {
+		if(user == null) {
+			model.addAttribute("msg", "잘못된 접근입니다.");
+			model.addAttribute("url", "/");
+			
+			return "alert";
+		}
+		
 		c.setDate();
-		c.setAuthor("길홍배");
+		c.setAuthor(user.getNickname());
 		contentdb.updateContent(c);
 		keyworddb.updateKeyWord(k);
 
@@ -80,7 +96,14 @@ public class ContentController {
 	}
 
 	@PostMapping("/content/deleteContent.do")
-	public String deleteContent(Model model, @RequestParam(value = "fid", required = true) int fid) {
+	public String deleteContent(Model model, @RequestParam(value = "fid", required = true) int fid,
+			@SessionAttribute(name = "loginUser", required = false) User user) {
+		if(user == null || !userValidate(fid, user.getNickname())) {
+			model.addAttribute("msg", "잘못된 접근입니다.");
+			model.addAttribute("url", "/");
+			System.out.println(userValidate(fid, user.getNickname()));
+			return "alert";
+		}
 		keyworddb.deleteKeyWord(fid);
 		contentdb.deleteContent(fid);
 
@@ -88,5 +111,10 @@ public class ContentController {
 		model.addAttribute("url", "/");
 
 		return "alert";
+	}
+	
+	private boolean userValidate(int fid, String userName) {
+		String author = contentdb.selectByFid(fid).getAuthor();
+		return author.equals(userName);
 	}
 }

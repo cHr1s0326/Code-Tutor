@@ -10,10 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.codeTutor.Service.UserService;
 import com.codeTutor.model.User;
-import com.codeTutor.model.UserLogin;
+import com.codeTutor.model.Signup;
 
 @Controller
 public class UserController {
@@ -22,7 +23,7 @@ public class UserController {
 	private UserService userdb;
 	
 	@PostMapping("/user/signup.do")
-	public String doSignup(Model model, @ModelAttribute User u, @ModelAttribute UserLogin ul) {
+	public String doSignup(Model model, @ModelAttribute User u, @ModelAttribute Signup ul) {
 		if(!u.getPassword().equals(ul.getPasswordRepeat())) {
 			model.addAttribute("msg", "두 비밀번호가 일치하지 않습니다.");
 			model.addAttribute("url", "/signup");

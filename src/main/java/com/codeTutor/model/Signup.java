@@ -1,6 +1,6 @@
 package com.codeTutor.model;
 
-public class UserLogin {
+public class Signup {
 	private String password;
 	private String passwordRepeat;
 

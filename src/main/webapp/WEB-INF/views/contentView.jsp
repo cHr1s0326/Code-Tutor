@@ -64,12 +64,14 @@
 				<div class="content-body">
 					<textarea class="content-textarea">${ content.content }</textarea>
 				</div>
-				<div class="btn-container">
-					<form class="update-form" action="/content/deleteContent.do?fid=${ content.fid }" method="post">
-						<input type="button" class="update-btn" value="수정" onClick="location.href='/contentUpdate?fid=${ content.fid }'">
-						<input type="submit" class="delete-btn" value="삭제">
-					</form>
-				</div>
+				<c:if test="${ loginUser.nickname == content.author }">
+					<div class="btn-container">
+						<form class="update-form" action="/content/deleteContent.do?fid=${ content.fid }" method="post">
+							<input type="button" class="update-btn" value="수정" onClick="location.href='/contentUpdate?fid=${ content.fid }'">
+							<input type="submit" class="delete-btn" value="삭제">
+						</form>
+					</div>
+				</c:if>
 			</div>
 		</div>
 	</div>
